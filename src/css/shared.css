@@ -1,0 +1,32 @@
+@import './palette.css';
+
+/* Font - Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Site Wide CSS */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.App {
+  background-color: var(--dark-yellow);
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: 20vh 75vh 5vh;
+  grid-template-areas: 'header' 'body' 'footer';
+}
+
+.nav-bar {
+  grid-area: header;
+}
+
+.body {
+  grid-area: body;
+}
+
+.footer {
+  grid-area: footer;
+}

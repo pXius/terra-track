@@ -1,0 +1,7 @@
+@import '../shared.css';
+
+.home-body {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
