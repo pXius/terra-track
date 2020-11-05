@@ -8,8 +8,7 @@ function ParcelListItem({ parcel }) {
     <div className="grid">
       <Link to={`/parcel/${parcel_id}`}>
         <span>{`Parcel ID: ${parcel_id}`}</span>
-        <span>{`User Name: ${user_name}`}</span>
-        <span>{`Location Name: ${location_name}`}</span>
+        <span>{`Location: ${location_name}`}</span>
         <span>{`Status: ${status}`}</span>
       </Link>
     </div>

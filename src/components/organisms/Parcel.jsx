@@ -11,23 +11,30 @@ function Parcel() {
   const parcel = parcelListData.find(parcel => parcel.parcel_id === id);
 
   // const {
-  //   id,
-  //   status,
-  //   eat,
-  //   parcel_id,
   //   sender,
   //   location_name,
   //   location_coordinate_latitude,
   //   location_coordinate_longitude,
-  //   user_phone,
-  //   user_name,
   //   notes,
   //   last_updated
   // } = data;
 
+  const eta =
+    parcel.status !== 'delivered'
+      ? `ETA: ${parcel.eta.substring(0, 10)}`
+      : null;
+
   return (
-    <div>
-      <h1>This is a Parcel {parcel.parcel_id}</h1>
+    <div className="body parcel-body">
+      <h2>Parcel: {`${parcel.parcel_id}`}</h2>
+      <div className="parcel-status">
+        <span>Status: {parcel.status}</span>
+        <span>{eta}</span>
+      </div>
+      <div className="parcel-sender">{`Sender: ${parcel.sender}`}</div>
+      <div className="parcel-location">
+        <span>{`Package Location: ${parcel.location_name}`}</span>
+      </div>
     </div>
   );
 }

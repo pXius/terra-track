@@ -7,8 +7,8 @@ function Header() {
         <h1>Logo</h1>
       </span>
       <ul>
-        <li>Contact Us</li>
-        <li>About</li>
+        <li>Profile</li>
+        <li>Support</li>
         <li>Dark Mode</li>
       </ul>
     </header>
