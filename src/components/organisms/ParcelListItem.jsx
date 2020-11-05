@@ -7,8 +7,8 @@ function ParcelListItem({ parcel }) {
 
   return (
     <div>
-      <h3>{`Parcel ID: ${parcel_id}`}</h3>
-      <h4>{`User Name: ${user_name}`}</h4>
+      <span>{`Parcel ID: ${parcel_id}`}</span>
+      <span>{`User Name: ${user_name}`}</span>
     </div>
   );
 }
