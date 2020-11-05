@@ -1,15 +1,14 @@
-import { useState } from 'react';
+import React from 'react';
+import { RecoilRoot } from 'recoil';
+
 import ParcelList from './components/template/ParcelList';
-import ParcelDataContext from './Contexts/ParcelData';
 
 function App() {
-  const [parcelData, setParcelData] = useState([]);
-  const parcelDataContext = { parcelData, setParcelData };
   return (
     <div className="App">
-      <ParcelDataContext.Provider value={parcelDataContext}>
+      <RecoilRoot>
         <ParcelList />
-      </ParcelDataContext.Provider>
+      </RecoilRoot>
     </div>
   );
 }

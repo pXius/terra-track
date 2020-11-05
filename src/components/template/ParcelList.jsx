@@ -1,30 +1,33 @@
-import React, { useContext, useEffect, useState } from 'react';
-import ParcelDataContext from '../../Contexts/ParcelData';
+// React Libraries
+import React, { useEffect, useState } from 'react';
+import { useRecoilState } from 'recoil';
+// Components
 import ParcelListItem from '../organisms/ParcelListItem';
+//State
+import { parcelListState } from '../../state/parcelListState-atom';
 
 function ParcelList() {
-  const { parcelData, setParcelData } = useContext(ParcelDataContext);
+  const [parcelListData, setParcelListData] = useRecoilState(parcelListState);
   const [isLoading, setIsLoading] = useState(true);
 
   const endpoint = 'https://my.api.mockaroo.com/orders.json?key=e49e6840';
 
   useEffect(() => {
-    if (parcelData.length === 0) {
-      const fetchData = async () => {
-        try {
-          const response = await fetch(endpoint, { mode: 'cors' });
-          const parsedData = await response.json();
-          setParcelData(parsedData);
-          setIsLoading(false);
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      fetchData();
-    }
-  }, [parcelData.length, setParcelData]);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(endpoint, { mode: 'cors' });
+        const parsedData = await response.json();
+        setParcelListData(parsedData);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, [setParcelListData]); // Reason for setParcelListData => https://github.com/facebook/react/issues/14920
 
-  const parcels = parcelData.map(parcel => (
+  // Create an array of parcelListItems from the fetch data
+  const parcels = parcelListData.map(parcel => (
     <ParcelListItem key={parcel.id} parcel={parcel} />
   ));
 
