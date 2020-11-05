@@ -28,7 +28,7 @@ function ParcelList() {
 
   // Create an array of parcelListItems from the fetch data
   const parcels = parcelListData.map(parcel => (
-    <ParcelListItem key={parcel.id} parcel={parcel} />
+    <ParcelListItem key={`${parcel.sender}-${parcel.id}`} parcel={parcel} />
   ));
 
   return (

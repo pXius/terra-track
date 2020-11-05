@@ -1,4 +1,3 @@
-// React Core
 // React Libraries
 import React from 'react';
 import { useHistory } from 'react-router-dom';
