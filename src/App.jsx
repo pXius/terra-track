@@ -8,7 +8,7 @@ import './css/style.css';
 import Header from './components/organisms/Header';
 import HomePage from './components/template/HomePage';
 import ParcelList from './components/template/ParcelList';
-import Parcel from './components/organisms/Parcel';
+import Parcel from './components/template/ParcelPage';
 import Footer from './components/organisms/Footer';
 
 function App() {

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 // State
 import { parcelListState } from '../../state/parcelListState-atom';
+import GoogleMaps from '../external-components/GoogleMaps';
 
 function Parcel() {
   const { id } = useParams(); // url:id
@@ -34,6 +35,12 @@ function Parcel() {
       <div className="parcel-sender">{`Sender: ${parcel.sender}`}</div>
       <div className="parcel-location">
         <span>{`Package Location: ${parcel.location_name}`}</span>
+        <div style={{ width: '400px', height: '400px' }}>
+          <GoogleMaps
+            latitude={parcel.location_coordinate_latitude}
+            longitude={parcel.location_coordinate_longitude}
+          />
+        </div>
       </div>
     </div>
   );

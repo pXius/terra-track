@@ -10,7 +10,7 @@ function ParcelList() {
   const [parcelListData, setParcelListData] = useRecoilState(parcelListState);
   const [isLoading, setIsLoading] = useState(true);
 
-  const endpoint = 'https://my.api.mockaroo.com/orders.json?key=e49e6840';
+  const endpoint = process.env.REACT_APP_SDA8_API;
 
   useEffect(() => {
     const fetchData = async () => {
