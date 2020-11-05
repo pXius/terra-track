@@ -31,7 +31,11 @@ function ParcelList() {
     <ParcelListItem key={parcel.id} parcel={parcel} />
   ));
 
-  return <div>{isLoading ? 'Loading...' : parcels}</div>;
+  return (
+    <div className="body parcel-list-body">
+      {isLoading ? 'Loading...' : parcels}
+    </div>
+  );
 }
 
 export default ParcelList;
