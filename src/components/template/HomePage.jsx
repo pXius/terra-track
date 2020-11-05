@@ -2,7 +2,7 @@
 import React from 'react';
 // Styling
 import '../../css/style.css';
-import Header from '../organism/Header';
+import Header from '../organisms/Header';
 
 function HomePage() {
   return (
