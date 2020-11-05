@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ParcelDataContext from '../../Contexts/ParcelData';
+import ParcelListItem from '../organisms/ParcelListItem';
 
 function ParcelList() {
   const { parcelData, setParcelData } = useContext(ParcelDataContext);
@@ -24,7 +25,7 @@ function ParcelList() {
   }, [parcelData.length, setParcelData]);
 
   const parcels = parcelData.map(parcel => (
-    <div key={parcel.id}>{parcel.user_name}</div>
+    <ParcelListItem key={parcel.id} parcel={parcel} />
   ));
 
   return <div>{isLoading ? 'Loading...' : parcels}</div>;
