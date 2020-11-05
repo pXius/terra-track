@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function ParcelListItem({ parcel }) {
-  const { status, parcel_id, location_name, user_name } = parcel;
+  const { status, parcel_id, location_name } = parcel;
 
   return (
     <div className="grid">

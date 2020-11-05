@@ -8,17 +8,8 @@ import GoogleMaps from '../external-components/GoogleMaps';
 
 function Parcel() {
   const { id } = useParams(); // url:id
-  const parcelListData = useRecoilValue(parcelListState); // Array of Parcels from List
+  const parcelListData = useRecoilValue(parcelListState); // Array of Parcels from previous API call.
   const parcel = parcelListData.find(parcel => parcel.parcel_id === id);
-
-  // const {
-  //   sender,
-  //   location_name,
-  //   location_coordinate_latitude,
-  //   location_coordinate_longitude,
-  //   notes,
-  //   last_updated
-  // } = data;
 
   const eta =
     parcel.status !== 'delivered'

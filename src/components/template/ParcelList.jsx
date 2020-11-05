@@ -9,7 +9,6 @@ import { parcelListState } from '../../state/parcelListState-atom';
 function ParcelList() {
   const [parcelListData, setParcelListData] = useRecoilState(parcelListState);
   const [isLoading, setIsLoading] = useState(true);
-
   const endpoint = process.env.REACT_APP_SDA8_API;
 
   useEffect(() => {
@@ -24,7 +23,7 @@ function ParcelList() {
       }
     };
     fetchData();
-  }, [setParcelListData]); // Reason for setParcelListData => https://github.com/facebook/react/issues/14920
+  }, [endpoint, setParcelListData]); // Reason for endpoint & setParcelListData => https://github.com/facebook/react/issues/14920
 
   // Create an array of parcelListItems from the fetch data
   const parcels = parcelListData.map(parcel => (
@@ -33,6 +32,9 @@ function ParcelList() {
 
   return (
     <div className="body parcel-list-body">
+      <button>Sort By ID</button>
+      <button>Sort By Location</button>
+      <button>ort By Status</button>
       {isLoading ? 'Loading...' : parcels}
     </div>
   );

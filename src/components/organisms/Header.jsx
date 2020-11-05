@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <header className="nav-bar">
       <span>
-        <h1>Logo</h1>
+        <Link to="/">
+          <h1>Logo</h1>
+        </Link>
       </span>
       <ul>
-        <li>Profile</li>
-        <li>Support</li>
         <li>Dark Mode</li>
       </ul>
     </header>
