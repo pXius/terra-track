@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // Starting Component
 import App from './App';
 // Facebook stealing my data
-import reportWebVitals from './js/reportWebVitals';
+import reportWebVitals from './js/react-app/reportWebVitals';
 // Styling
 import './css/style.css';
 import 'semantic-ui-css/semantic.min.css';
