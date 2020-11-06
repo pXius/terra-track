@@ -4,12 +4,13 @@ import { RecoilRoot } from 'recoil';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Styling
 import './css/style.css';
+import 'semantic-ui-css/semantic.min.css';
 // Components
 import Header from './components/organisms/Header';
 import HomePage from './components/template/HomePage';
 import ParcelList from './components/template/ParcelList';
 import Parcel from './components/template/ParcelPage';
-import Footer from './components/organisms/Footer';
+// import Footer from './components/organisms/Footer';
 
 function App() {
   return (

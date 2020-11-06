@@ -1,8 +1,13 @@
+// React Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
+// Starting Component
 import App from './App';
+// Facebook stealing my data
 import reportWebVitals from './js/reportWebVitals';
-console.log(process.env);
+// Styling
+import './css/style.css';
+import 'semantic-ui-css/semantic.min.css';
 
 ReactDOM.render(
   <React.StrictMode>

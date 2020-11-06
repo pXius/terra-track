@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 // State
 import { parcelListState } from '../../state/parcelListState-atom';
-import GoogleMaps from '../external-components/GoogleMaps';
+import GoogleMaps from '../molecules/GoogleMaps';
 
 function Parcel() {
   const { id } = useParams(); // url:id

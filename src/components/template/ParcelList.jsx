@@ -4,7 +4,8 @@ import { useRecoilState } from 'recoil';
 // Custom JS Functions
 import { objectSort, objectReverseSort } from '../../js/sorterFunctions';
 // Components
-import ParcelListItem from '../organisms/ParcelListItem';
+import ParcelListItem from '../molecules/ParcelListItem';
+import { Button } from 'semantic-ui-react';
 //State
 import { parcelListState } from '../../state/parcelListState-atom';
 
@@ -41,7 +42,8 @@ function ParcelList() {
     }
   }
 
-  // Creates an array of <jsx>parcels</jsx> from the sorted/filtered parcels.
+  /* Creates an array of <jsx>parcels</jsx> from the sorted/filtered parcels
+     in the displayedParcels array*/
   const jsxParcels = displayedParcels.map(parcel => {
     return (
       <ParcelListItem key={`${parcel.sender}-${parcel.id}`} parcel={parcel} />
@@ -50,15 +52,16 @@ function ParcelList() {
 
   return (
     <div className="body parcel-list-body">
-      <button onClick={() => sortHandler('parcel_id')}>
-        Sort By ID {sortDirection['parcel_id']}
-      </button>
-      <button onClick={() => sortHandler('location_name')}>
-        Sort By Location {sortDirection['location_name']}
-      </button>
-      <button onClick={() => sortHandler('status')}>
-        Sort By Status {sortDirection['status']}
-      </button>
+      <Button onClick={() => sortHandler('parcel_id')}>
+        Sort By ID <i class={`fas fa-chevron-${sortDirection['parcel_id']}`} />
+      </Button>
+      <Button onClick={() => sortHandler('location_name')}>
+        Sort By Location{' '}
+        <i class={`fas fa-chevron-${sortDirection['location_name']}`} />
+      </Button>
+      <Button onClick={() => sortHandler('status')}>
+        Sort By Status <i class={`fas fa-chevron-${sortDirection['status']}`} />
+      </Button>
       {isLoading ? 'Loading...' : jsxParcels}
     </div>
   );
