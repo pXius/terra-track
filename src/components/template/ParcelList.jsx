@@ -65,7 +65,6 @@ function ParcelList() {
   const jsxParcels = displayedParcels.map(parcel => {
     return <ParcelListItem key={`${parcel.sender}-${parcel.id}`} parcel={parcel} />;
   });
-
   return (
     <div className="body parcel-list-body">
       <Button onClick={() => sortHandler('parcel_id')}>
