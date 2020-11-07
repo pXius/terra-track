@@ -10,8 +10,8 @@ import { themeState } from '../../state/theme-atom';
 function Header() {
   const [theme, setTheme] = useRecoilState(themeState);
 
-  function themeToggle() {
-    theme === 'light' ? setTheme('dark') : setTheme('light');
+  function themeToggle(event, data) {
+    data.checked === true ? setTheme('dark') : setTheme('light');
   }
 
   return (
@@ -22,7 +22,10 @@ function Header() {
         </Link>
       </span>
       <i className={`moon ${theme === 'light' ? 'outline' : null} icon large`}>
-        <Checkbox onClick={() => themeToggle()} className="toggle" />
+        <Checkbox
+          onClick={(event, data) => themeToggle(event, data)}
+          className="toggle"
+        />
       </i>
     </header>
   );
