@@ -1,3 +1,4 @@
+// React Libraries
 import React from 'react';
 
 function Footer() {

@@ -8,6 +8,9 @@ import { objectFilter } from '../../js/functions/filterFunction';
 import ParcelListItem from '../molecules/ParcelListItem';
 import { Button } from 'semantic-ui-react';
 import FilterButton from '../atoms/FilterButton';
+import Search from '../molecules/Search';
+import Loading from '../molecules/Loading';
+import ErrorScreen from '../molecules/ErrorScreen';
 //State
 import { parcelListState } from '../../state/parcelListState-atom';
 
@@ -15,24 +18,31 @@ function ParcelList() {
   // eslint-disable-next-line no-unused-vars
   const [parcelListData, setParcelListData] = useRecoilState(parcelListState);
   const [displayedParcels, setDisplayedParcels] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [fetchStatus, setFetchStatus] = useState('loading');
   const [sortDirection, setSortDirection] = useState({ parcel_id: 'down' });
   const endpoint = process.env.REACT_APP_SDA8_API;
+  // const endpoint = 'http://google.com';
 
   // API call to populate parcel arrays.
   useEffect(() => {
+    const abortFetch = new AbortController();
     const fetchData = async () => {
       try {
-        const response = await fetch(endpoint, { mode: 'cors' });
+        const response = await fetch(endpoint, {
+          mode: 'cors',
+          signal: abortFetch.signal
+        });
         const parsedData = await response.json();
         setParcelListData(parsedData);
         setDisplayedParcels(objectSort(parsedData, 'parcel_id'));
-        setIsLoading(false);
+        setFetchStatus('success');
       } catch (error) {
+        setFetchStatus('error');
         console.log(error);
       }
     };
     fetchData();
+    return () => abortFetch.abort();
   }, [endpoint, setParcelListData]); // Reason for endpoint & setParcelListData => https://github.com/facebook/react/issues/14920
 
   /* This handler will change the state of the sort direction and call the appropriate
@@ -69,8 +79,14 @@ function ParcelList() {
   const jsxParcels = displayedParcels.map(parcel => {
     return <ParcelListItem key={`${parcel.sender}-${parcel.id}`} parcel={parcel} />;
   });
+
   return (
     <div className="body parcel-list-body">
+      <Search
+        parcelArray={parcelListData}
+        setParcelArray={setDisplayedParcels}
+        sortFunction={setSortDirection}
+      />
       <div>
         <Button onClick={() => sortHandler('parcel_id')}>
           Sort By ID <i className={`fas fa-chevron-${sortDirection['parcel_id']}`} />
@@ -84,8 +100,9 @@ function ParcelList() {
         </Button>
         <FilterButton callback={dropDownChange} />
       </div>
-
-      {isLoading ? 'Loading...' : jsxParcels}
+      {fetchStatus === 'loading' && <Loading />}
+      {fetchStatus === 'success' && jsxParcels}
+      {fetchStatus === 'error' && <ErrorScreen />}
     </div>
   );
 }
