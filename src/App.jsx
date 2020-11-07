@@ -1,20 +1,27 @@
 // React Libraries
 import React from 'react';
-import { RecoilRoot } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
 // Components
 import Header from './components/organisms/Header';
 import HomePage from './components/template/HomePage';
 import ParcelList from './components/template/ParcelList';
 import Parcel from './components/template/ParcelPage';
-// import Footer from './components/organisms/Footer';
+import Footer from './components/organisms/Footer';
+// State
+import { themeState } from './state/theme-atom';
+//Style
+import { ThemeProvider } from 'styled-components';
+import { darkTheme, lightTheme } from './styles/js_theming/themes';
+import { GlobalStyles } from './styles/js_theming/global';
 
 function App() {
+  const theme = useRecoilValue(themeState);
   return (
-    <div className="App">
-      <Router>
-        <RecoilRoot>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <div className="App">
+        <Router>
+          <GlobalStyles />
           <Header />
           <Switch>
             <Route path="/" exact>
@@ -27,10 +34,10 @@ function App() {
               <Parcel />
             </Route>
           </Switch>
-          {/* <Footer /> */}
-        </RecoilRoot>
-      </Router>
-    </div>
+        </Router>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

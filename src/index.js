@@ -1,17 +1,20 @@
 // React Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { RecoilRoot } from 'recoil';
 // Starting Component
 import App from './App';
 // Facebook stealing my data
 import reportWebVitals from './js/react-app/reportWebVitals';
 // Styling
-import './css/style.css';
 import 'semantic-ui-css/semantic.min.css';
+import './styles/style.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root')
 );

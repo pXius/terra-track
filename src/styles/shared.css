@@ -10,7 +10,6 @@ body {
 }
 
 .App {
-  background-color: var(--dark-yellow);
   display: grid;
   grid-template-rows: 20vh 75vh 5vh;
   grid-template-areas: 'header' 'body' 'footer';

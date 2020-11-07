@@ -4,10 +4,10 @@ import { useRecoilState } from 'recoil';
 // Custom JS Functions & Variables
 import { objectSort, objectReverseSort } from '../../js/functions/sorterFunctions';
 import { objectFilter } from '../../js/functions/filterFunction';
-import { listFilter } from '../../js/variables/filterMenuObject';
 // Components
 import ParcelListItem from '../molecules/ParcelListItem';
-import { Button, Dropdown } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
+import FilterButton from '../atoms/FilterButton';
 //State
 import { parcelListState } from '../../state/parcelListState-atom';
 
@@ -37,6 +37,7 @@ function ParcelList() {
 
   /* This handler will change the state of the sort direction and call the appropriate
     sorting function to resort the list. A fontAwesome arrow on the sort button monitors the sort direction. */
+
   function sortHandler(sortType) {
     if (sortDirection[sortType] === 'down') {
       setSortDirection({ [sortType]: 'up' });
@@ -47,14 +48,16 @@ function ParcelList() {
     }
   }
 
-  /* This function will filter the displayed parcel list based on delivery
-     status drop-down menu. On each change the list will be re-sorted by parcel_id. */
-  function dropDownChange(event, data) {
+  /* This function will filter the displayed parcel list based on the delivery
+     status filter button. On each change the list will be re-sorted by parcel_id.
+     Here's the catch, it's made to be passed down to the FilterButton component */
+
+  function dropDownChange(filterType) {
     let filteredArray;
-    if (data.value === 'all') {
+    if (filterType === 'all') {
       filteredArray = parcelListData;
     } else {
-      filteredArray = objectFilter(parcelListData, 'status', data.value);
+      filteredArray = objectFilter(parcelListData, 'status', filterType);
     }
     setSortDirection({ parcel_id: 'down' });
     setDisplayedParcels(objectSort(filteredArray, 'parcel_id'));
@@ -62,6 +65,7 @@ function ParcelList() {
 
   /* Creates an array of <jsx>parcels</jsx> from the sorted/filtered parcels
      in the displayedParcels array*/
+
   const jsxParcels = displayedParcels.map(parcel => {
     return <ParcelListItem key={`${parcel.sender}-${parcel.id}`} parcel={parcel} />;
   });
@@ -77,12 +81,7 @@ function ParcelList() {
       <Button onClick={() => sortHandler('status')}>
         Sort By Status <i className={`fas fa-chevron-${sortDirection['status']}`} />
       </Button>
-      <Dropdown
-        header="Parcel Status:"
-        options={listFilter}
-        defaultValue={listFilter[0].value}
-        onChange={dropDownChange}
-      />
+      <FilterButton callback={dropDownChange} />
       {isLoading ? 'Loading...' : jsxParcels}
     </div>
   );
