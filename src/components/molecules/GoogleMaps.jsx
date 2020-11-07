@@ -1,6 +1,6 @@
 // React Libraries
 import React from 'react';
-// Google react API
+// GoogleMapsReact Component
 import GoogleMapReact from 'google-map-react';
 
 // Quick map marker, details below*

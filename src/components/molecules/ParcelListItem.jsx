@@ -1,5 +1,7 @@
+// React Libraries
 import React from 'react';
 import { Link } from 'react-router-dom';
+// JS Functions
 import { beautifyJSONStatus } from '../../js/functions/beautifyJSON';
 
 function ParcelListItem({ parcel }) {

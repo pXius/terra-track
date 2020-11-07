@@ -5,7 +5,6 @@
   justify-content: space-around;
 }
 
-/* Theme Select Toggle Box  */
 .ui.toggle.checkbox input:focus:checked ~ .box:before,
 .ui.toggle.checkbox input:focus:checked ~ label:before {
   background-color: red !important;

@@ -71,17 +71,20 @@ function ParcelList() {
   });
   return (
     <div className="body parcel-list-body">
-      <Button onClick={() => sortHandler('parcel_id')}>
-        Sort By ID <i className={`fas fa-chevron-${sortDirection['parcel_id']}`} />
-      </Button>
-      <Button onClick={() => sortHandler('location_name')}>
-        Sort By Location{' '}
-        <i className={`fas fa-chevron-${sortDirection['location_name']}`} />
-      </Button>
-      <Button onClick={() => sortHandler('status')}>
-        Sort By Status <i className={`fas fa-chevron-${sortDirection['status']}`} />
-      </Button>
-      <FilterButton callback={dropDownChange} />
+      <div>
+        <Button onClick={() => sortHandler('parcel_id')}>
+          Sort By ID <i className={`fas fa-chevron-${sortDirection['parcel_id']}`} />
+        </Button>
+        <Button onClick={() => sortHandler('location_name')}>
+          Sort By Location{' '}
+          <i className={`fas fa-chevron-${sortDirection['location_name']}`} />
+        </Button>
+        <Button onClick={() => sortHandler('status')}>
+          Sort By Status <i className={`fas fa-chevron-${sortDirection['status']}`} />
+        </Button>
+        <FilterButton callback={dropDownChange} />
+      </div>
+
       {isLoading ? 'Loading...' : jsxParcels}
     </div>
   );

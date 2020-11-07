@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+// CSS styling that will affect children components of the ThemeProvider.
 export const GlobalStyles = createGlobalStyle`
 
   *,

@@ -1,3 +1,5 @@
+// Themes that will be passed to "global.js" for site wide styling
+
 export const lightTheme = {
   backgroundColor: 'var(--dark-yellow)',
   text: '#363537',

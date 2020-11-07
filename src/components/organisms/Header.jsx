@@ -21,7 +21,9 @@ function Header() {
           <h1>Logo</h1>
         </Link>
       </span>
-      <Checkbox onClick={() => themeToggle()} className="toggle" />
+      <i className={`moon ${theme === 'light' ? 'outline' : null} icon large`}>
+        <Checkbox onClick={() => themeToggle()} className="toggle" />
+      </i>
     </header>
   );
 }
