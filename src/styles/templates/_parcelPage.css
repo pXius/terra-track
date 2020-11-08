@@ -1,0 +1,69 @@
+@import '../shared.css';
+
+.ui.circular.button {
+  margin-bottom: 8px;
+}
+
+.parcel-body {
+  margin: 0 10px 0 10px;
+}
+
+.parcel-page-card {
+  background: rgb(213, 199, 199);
+  border: 2px solid black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 12pt;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.parcel-page-card h2 {
+  padding: 10px 0 0 8px;
+}
+
+.parcel-status {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 10px;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.parcel-status span {
+  margin-bottom: 8px;
+}
+
+.card-page-title {
+  font-weight: bold;
+}
+
+.notes {
+  margin-left: 10px;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 480px) {
+  .parcel-body {
+    margin: 0 8vw 0 8vw;
+  }
+}
+
+@media screen and (min-width: 766px) {
+  .parcel-status {
+    grid-template-columns: 38% 67%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .parcel-body {
+    margin: 0 15vw 0 15vw;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .parcel-body {
+    margin: 0 20vw 0 20vw;
+  }
+}

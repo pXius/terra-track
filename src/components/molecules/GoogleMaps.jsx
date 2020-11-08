@@ -12,7 +12,7 @@ function GoogleMaps({ latitude, longitude }) {
   const mapSettings = { center: { lat: latitude, lng: longitude }, zoom: 12 };
 
   return (
-    <div style={{ height: '100%', width: '100%' }}>
+    <div style={{ height: '50vh', width: '100%', 'border-radius': '12px' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API }}
         defaultCenter={mapSettings.center}
@@ -29,7 +29,7 @@ export default GoogleMaps;
 The google api expects a "center" object with the properties "lat" and "lng", hence
 the usage of the mapSettings object.
 
-The styling height/width has to be set here to fill the parent container or the map
+The  height has to be set here (explicitly) to fill the parent container or the map
 will collapse. It's a google thing. Sorry Eduardo 🙈
 
 More info: https://www.npmjs.com/package/google-map-react

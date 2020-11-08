@@ -5,7 +5,8 @@ import { useRecoilValue } from 'recoil';
 // Components
 import { Button } from 'semantic-ui-react';
 import GoogleMaps from '../molecules/GoogleMaps';
-
+// Functions
+import { beautifyJSONStatus } from '../../js/functions/beautifyJSON';
 // State
 import { parcelListState } from '../../state/parcelListState-atom';
 
@@ -14,23 +15,38 @@ function Parcel() {
   const parcelListData = useRecoilValue(parcelListState); // Array of Parcels from previous API call.
   const parcel = parcelListData.find(parcel => parcel.parcel_id === id);
 
-  const eta =
-    parcel.status !== 'delivered' ? `ETA: ${parcel.eta.substring(0, 10)}` : null;
+  const eta = parcel.status !== 'delivered' ? parcel.eta.substring(0, 10) : null;
 
   return (
     <div className="body parcel-body">
       <Link to="/parcels">
-        <Button circular icon="arrow left" />
+        <Button circular className="back-button" icon="arrow left" />
       </Link>
-      <h2>Parcel: {`${parcel.parcel_id}`}</h2>
-      <div className="parcel-status">
-        <span>Status: {parcel.status}</span>
-        <span>{eta}</span>
-      </div>
-      <div className="parcel-sender">{`Sender: ${parcel.sender}`}</div>
-      <div className="parcel-location">
-        <span>{`Package Location: ${parcel.location_name}`}</span>
-        <div style={{ width: '400px', height: '400px' }}>
+      <div className="parcel-page-card">
+        <h2>Parcel: {parcel.parcel_id}</h2>
+
+        <div className="parcel-status">
+          <span>
+            <span className="card-page-title">Status:</span>{' '}
+            {beautifyJSONStatus(parcel.status)}
+          </span>
+          <span>
+            <span className="card-page-title">ETA:</span> {eta}
+          </span>
+
+          <span className="parcel-sender">
+            <span className="card-page-title">Sender:</span> {parcel.sender}
+          </span>
+          <span>
+            <span className="card-page-title">Location:</span> {parcel.location_name}
+          </span>
+        </div>
+        <div className="notes">
+          <div className="card-page-title">Notes:</div>
+          {parcel.notes === null ? 'None' : parcel.notes}
+        </div>
+
+        <div className="maps">
           <GoogleMaps
             latitude={parcel.location_coordinate_latitude}
             longitude={parcel.location_coordinate_longitude}
