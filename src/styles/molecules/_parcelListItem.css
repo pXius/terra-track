@@ -16,6 +16,7 @@
   -ms-transition: background 0.25s;
   -o-transition: background 0.25s;
   box-shadow: 0 8px 6px -6px black;
+  overflow: hidden;
 }
 
 .pl-item {

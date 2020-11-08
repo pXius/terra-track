@@ -16,7 +16,7 @@ function beautifyJSONStatus(status) {
 function beautifyJSONStatusSE(status) {
   switch (status) {
     case 'order-info-received':
-      return 'Orderinformation Mottagen';
+      return 'Information Mottagen';
     case 'ready-for-pickup':
       return 'Redo för Insamling';
     case 'on-the-way':
