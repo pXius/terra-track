@@ -1,20 +1,21 @@
 @import './palette.css';
 
 /* Font - Roboto */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 /* Site Wide CSS */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .App {
   display: grid;
   height: 100vh;
   overflow: auto;
-  grid-template-rows: 100px auto 60px;
+  grid-template-rows: 160px auto 60px;
   grid-template-areas: 'header' 'body' 'footer';
 }
 
@@ -31,14 +32,17 @@ body {
 }
 
 a:link {
+  color: var(--dark-red);
   text-decoration: none;
 }
 
 a:visited {
+  color: var(--dark-red);
   text-decoration: none;
 }
 
 a:active {
+  color: var(--dark-red);
   text-decoration: none;
 }
 

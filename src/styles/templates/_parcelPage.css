@@ -5,7 +5,7 @@
 }
 
 .parcel-body {
-  margin: 0 10px 0 10px;
+  padding: 0 10px 0 10px;
 }
 
 .parcel-page-card {
@@ -17,6 +17,7 @@
   font-size: 12pt;
   border-radius: 12px;
   overflow: hidden;
+  border: 2px white;
 }
 
 .parcel-page-card h2 {
@@ -46,7 +47,7 @@
 
 @media screen and (min-width: 480px) {
   .parcel-body {
-    margin: 0 8vw 0 8vw;
+    padding: 0 8vw 0 8vw;
   }
 }
 
@@ -58,12 +59,12 @@
 
 @media screen and (min-width: 1100px) {
   .parcel-body {
-    margin: 0 15vw 0 15vw;
+    padding: 0 15vw 0 15vw;
   }
 }
 
 @media screen and (min-width: 1600px) {
   .parcel-body {
-    margin: 0 20vw 0 20vw;
+    padding: 0 20vw 0 20vw;
   }
 }

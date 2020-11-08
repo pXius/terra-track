@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 }
 
-body,
+
 .nav-bar,
 .body,
 .footer {

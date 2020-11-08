@@ -16,17 +16,22 @@ function Header() {
 
   return (
     <header className="nav-bar">
-      <span>
-        <Link to="/">
-          <h1>Logo</h1>
-        </Link>
-      </span>
-      <i className={`moon ${theme === 'light' ? 'outline' : null} icon large`}>
+      {/* <div className="logo-and-name"> */}
+      <Link className="logo-link" to="/">
+        <div className="logo" />
+        <h1 className="app-name">
+          Terra
+          <br />
+          Track
+        </h1>
+      </Link>
+      <div className="theme-toggle">
+        <i className={`moon ${theme === 'light' ? 'outline' : null} icon large `} />
         <Checkbox
           onClick={(event, data) => themeToggle(event, data)}
           className="toggle"
         />
-      </i>
+      </div>
     </header>
   );
 }
