@@ -14,6 +14,7 @@ import { themeState } from './state/theme-atom';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './styles/js_theming/themes';
 import { GlobalStyles } from './styles/js_theming/global';
+import ErrorScreen from './components/molecules/ErrorScreen';
 
 function App() {
   const theme = useRecoilValue(themeState);
@@ -33,6 +34,7 @@ function App() {
             <Route path="/parcel/:id" exact>
               <Parcel />
             </Route>
+            <Route component={ErrorScreen} />
           </Switch>
         </Router>
         <Footer />
