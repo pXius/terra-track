@@ -1,10 +1,10 @@
 # Terra Track
 
-### Parcel Tracking App built in ReactJS
+### Parcel Tracking App built with ReactJS
 
 Terra Track was built as a proof of concept using modern React functional components instead of classes to implement a fully functioning light-weight app.
 
-Instead of using the Context API to manage global state, Recoil was used instead.
+Instead of using the Context API to manage global state, Recoil was used instead.
 
 Cross app themeing is managed by a theme-provider from the Styled Components library.
 
