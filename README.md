@@ -27,8 +27,8 @@ Your object API needs to serve objects with the following structure:
 
 ## Screenshots
 
-![](https://i.imgur.com/1y1RsAR.png)
+![](https://i.imgur.com/lMURocx.png)
 
-![](https://i.imgur.com/WXhoONV.png)
+![](https://i.imgur.com/1wMWGKM.png)
 
-![](https://i.imgur.com/kt3RIbb.png)
+![](https://i.imgur.com/cPHi48o.png)
