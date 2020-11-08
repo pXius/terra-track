@@ -1,11 +1,9 @@
 @import './palette.css';
-
-/* Font - Roboto */
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 /* Site Wide CSS */
 body {
+  background: var(--dark-grey);
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
@@ -20,16 +18,29 @@ body {
 }
 
 .nav-bar {
+  z-index: 1;
   grid-area: header;
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    0px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    0px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .body {
   grid-area: body;
   padding-bottom: 8px;
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    0px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    0px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .footer {
   grid-area: footer;
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    0px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    0px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 a:link,

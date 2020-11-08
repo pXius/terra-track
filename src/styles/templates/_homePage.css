@@ -12,8 +12,8 @@
   width: 300px;
   font-size: 18pt;
   background-color: var(--dark-red);
-  color: var(--dark-grey-button);
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(0, 0, 0, 0.4);
   box-shadow: 0 8px 6px -6px black;
 }
 

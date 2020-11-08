@@ -9,6 +9,10 @@ export const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 }
 
+body {
+  background: ${({ theme }) => theme.bodyColor};
+}
+
 .nav-bar,
 .body,
 .footer {
@@ -43,6 +47,15 @@ a,
 .parcel-item-div:hover {
   background: ${({ theme }) => theme.hover};
   color: ${({ theme }) => theme.text};
+}
+.parcel-page-card {
+  background: ${({ theme }) => theme.card};
+  border: 2px solid ${({ theme }) => theme.line};
+  color: ${({ theme }) => theme.text};
+}
+
+.maps {
+  border-top: 2px solid ${({ theme }) => theme.line};
 }
 
 `;

@@ -32,8 +32,8 @@
   position: relative;
   padding-left: 38px !important;
   background: var(--dark-red);
-  color: rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(0, 0, 0, 0.4);
   max-width: 25%;
   flex-grow: 1;
   max-height: 40px;
@@ -50,8 +50,8 @@
   padding-right: 8px;
   flex-grow: 1;
   background: var(--dark-red);
-  color: rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(0, 0, 0, 0.4);
 }
 
 .ui.labeled.icon.button:hover,

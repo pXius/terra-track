@@ -22,27 +22,26 @@ function Parcel() {
       <Link to="/parcels">
         <Button circular className="back-button" icon="arrow left" />
       </Link>
-      <div className="parcel-page-card">
+      <div className="parcel-page-card effect7 effect8">
         <h2>Parcel: {parcel.parcel_id}</h2>
 
         <div className="parcel-status">
           <span>
-            <span className="card-page-title">Status:</span>{' '}
-            {beautifyJSONStatus(parcel.status)}
+            <span className="pl-head">Status:</span> {beautifyJSONStatus(parcel.status)}
           </span>
           <span>
-            <span className="card-page-title">ETA:</span> {eta}
+            <span className="pl-head">ETA:</span> {eta}
           </span>
 
           <span className="parcel-sender">
-            <span className="card-page-title">Sender:</span> {parcel.sender}
+            <span className="pl-head">Sender:</span> {parcel.sender}
           </span>
           <span>
-            <span className="card-page-title">Location:</span> {parcel.location_name}
+            <span className="pl-head">Location:</span> {parcel.location_name}
           </span>
         </div>
         <div className="notes">
-          <div className="card-page-title">Notes:</div>
+          <div className="pl-head">Notes:</div>
           {parcel.notes === null ? 'None' : parcel.notes}
         </div>
 

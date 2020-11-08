@@ -6,7 +6,8 @@ export const lightTheme = {
   line: 'var(--dark-grey)',
   title: 'var(--dark-grey)',
   card: 'var(--dark-yellow)',
-  hover: 'var(--hover-grey)'
+  hover: 'var(--hover-grey)',
+  bodyColor: 'var(--dark-grey)'
 };
 
 export const darkTheme = {
@@ -15,5 +16,6 @@ export const darkTheme = {
   line: 'rgba(255, 204, 1, 0.5)',
   title: 'var(--dark-red)',
   card: 'var(--dark-grey)',
-  hover: 'var(--hover-yellow)'
+  hover: 'var(--hover-yellow)',
+  bodyColor: 'var(--darker-grey)'
 };

@@ -11,11 +11,11 @@ import 'semantic-ui-css/semantic.min.css';
 import './styles/style.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <RecoilRoot>
-      <App />
-    </RecoilRoot>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <RecoilRoot>
+    <App />
+  </RecoilRoot>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 
