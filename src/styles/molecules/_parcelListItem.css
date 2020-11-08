@@ -1,7 +1,6 @@
 @import '../shared.css';
 
 .parcel-item-div {
-  background: #363537;
   transition: background 0.25s;
   min-height: 8vh;
   margin-bottom: 8px;
@@ -16,6 +15,7 @@
   -moz-transition: background 0.25s;
   -ms-transition: background 0.25s;
   -o-transition: background 0.25s;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 .pl-item {
@@ -26,19 +26,8 @@
 
 .pl-head {
   font-weight: bold;
+  color: var(--dark-red);
 }
-
-.parcel-item-div:hover {
-  background: rgb(115, 115, 150);
-  color: rgb(133, 218, 91);
-}
-
-/* a:hover {
-  text-decoration: none;
-  color: green;
-  background-color: rgb(82, 82, 143);
-  background: rgb(82, 82, 143);
-} */
 
 @media screen and (min-width: 767px) {
   .parcel-item-div {

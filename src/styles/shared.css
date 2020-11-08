@@ -25,6 +25,7 @@ body {
 
 .body {
   grid-area: body;
+  padding-bottom: 8px;
 }
 
 .footer {

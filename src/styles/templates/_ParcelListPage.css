@@ -9,6 +9,7 @@
 
 .filter-and-search {
   display: flex;
+  margin-top: 8px;
   margin-bottom: 8px;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +17,7 @@
 
 .live-search-field {
   flex-grow: 1;
-  height: 38px;
+  height: 40px;
   padding: 0;
   margin-right: 8px;
   border-radius: 0.28571429rem;
@@ -24,12 +25,7 @@
   -moz-border-radius: 0.28571429rem;
   -ms-border-radius: 0.28571429rem;
   -o-border-radius: 0.28571429rem;
-}
-
-.ui.labeled.icon.button {
-  max-width: 25%;
-  flex-grow: 1;
-  max-height: 36px;
+  border: 1px solid var(--dark-grey);
 }
 
 .ui.labeled.icon.button {
@@ -38,12 +34,15 @@
   background: var(--dark-red);
   color: rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(0, 0, 0, 0.3);
+  max-width: 25%;
+  flex-grow: 1;
+  max-height: 40px;
 }
 
 .sort-buttons {
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .ui.button.s-button {
@@ -55,6 +54,7 @@
   border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
+.ui.labeled.icon.button:hover,
 .ui.button.s-button:hover {
   background-color: rgb(218, 84, 84);
 }

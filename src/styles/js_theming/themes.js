@@ -3,17 +3,17 @@
 export const lightTheme = {
   backgroundColor: 'var(--dark-yellow)',
   text: 'var(--dark-grey)',
-  toggleBorder: '#FFF',
-  gradient: 'linear-gradient(#39598A, #79D7ED)',
   line: 'var(--dark-grey)',
-  title: 'var(--dark-grey)'
+  title: 'var(--dark-grey)',
+  card: 'var(--dark-yellow)',
+  hover: 'var(--hover-grey)'
 };
 
 export const darkTheme = {
-  backgroundColor: '#363537',
-  text: '#FAFAFA',
-  toggleBorder: '#6B8096',
-  gradient: 'linear-gradient(#091236, #1E215D)',
-  line: 'var(--dark-red)',
-  title: 'var(--dark-red)'
+  backgroundColor: 'var(--dark-grey)',
+  text: 'rgba(255, 255, 255, 0.728)',
+  line: 'rgba(255, 204, 1, 0.5)',
+  title: 'var(--dark-red)',
+  card: 'var(--dark-grey)',
+  hover: 'var(--hover-yellow)'
 };

@@ -34,4 +34,15 @@ a,
   color: rgba(0, 0, 0, 0.7) ;
 }
 
+.parcel-item-div {
+  background: ${({ theme }) => theme.card};
+  border: 1px solid ${({ theme }) => theme.line};
+  color: ${({ theme }) => theme.text};
+}
+
+.parcel-item-div:hover {
+  background: ${({ theme }) => theme.hover};
+  color: ${({ theme }) => theme.text};
+}
+
 `;
