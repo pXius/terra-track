@@ -10,7 +10,7 @@ function HomePage() {
   return (
     <div className="body home-body">
       <Button onClick={() => history.push('/parcels')} className="start-button">
-        Track
+        TRACK
       </Button>
     </div>
   );

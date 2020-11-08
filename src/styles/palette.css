@@ -1,4 +1,8 @@
 :root {
   --dark-yellow: rgb(255, 204, 1);
-  --dark-red: #de1b1b;
+  --dark-red: rgba(222, 27, 27, 1);
+  --dark-grey: rgba(54, 53, 55, 1);
+  --dark-grey-button: rgba(54, 53, 55, 0.7);
 }
+
+/* The Red 222, 27, 27 */

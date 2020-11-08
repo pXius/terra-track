@@ -9,7 +9,6 @@
   align-items: center;
   padding-left: 8px;
   padding-right: 8px;
-  border-bottom: 1px solid grey;
 }
 
 .ui.toggle.checkbox input:focus:checked ~ .box:before,
@@ -31,14 +30,6 @@
 .logo-link {
   display: contents;
 }
-
-/* .logo {
-  min-width: 128px;
-  min-height: 130px;
-  background-size: cover;
-  background-position: center;
-  background-image: url('../../assets/images/logo.png');
-} */
 
 .app-name {
   font-family: 'Libre Barcode 39 Extended Text', cursive;

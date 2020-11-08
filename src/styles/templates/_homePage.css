@@ -6,6 +6,16 @@
   justify-items: center;
 }
 
-.start-button {
-  margin-bottom: 25vh;
+.ui.button.start-button {
+  margin-bottom: 60px;
+  padding: 8px 0 8px 0;
+  width: 300px;
+  font-size: 18pt;
+  background-color: var(--dark-red);
+  color: var(--dark-grey-button);
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.ui.button.start-button:hover {
+  background-color: rgb(218, 84, 84);
 }

@@ -1,7 +1,7 @@
 @import '../palette.css';
 
 .parcel-list-body {
-  padding: 8px 10px 0 10px;
+  padding: 8px 4px 0 4px;
   display: flex;
   flex-direction: column;
   font-size: 12pt;
@@ -32,10 +32,12 @@
   max-height: 36px;
 }
 
-.ui.labeled.icon.button,
-.ui.labeled.icon.buttons .button {
+.ui.labeled.icon.button {
   position: relative;
-  padding-left: 48px !important;
+  padding-left: 38px !important;
+  background: var(--dark-red);
+  color: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
 .sort-buttons {
@@ -48,9 +50,34 @@
   padding-left: 8px;
   padding-right: 8px;
   flex-grow: 1;
+  background: var(--dark-red);
+  color: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.ui.button.s-button:hover {
+  background-color: rgb(218, 84, 84);
 }
 
 .ui.button.sc-button {
   margin-right: 0.52em;
   margin-left: 0.26em;
+}
+
+.parcel-list-body a:link,
+.parcel-list-body a:visited,
+.parcel-list-body a:active {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width: 380px) {
+  .parcel-list-body {
+    padding: 8px 8px 0 8px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .ui.labeled.icon.button {
+    text-align: center;
+  }
 }
