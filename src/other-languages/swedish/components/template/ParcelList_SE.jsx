@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 // Custom JS Functions & Variables
-import { objectSort, objectReverseSort } from '../../js/functions/sorterFunctions';
-import { objectFilter } from '../../js/functions/filterFunction';
+import { objectSort, objectReverseSort } from '../../../../js/functions/sorterFunctions';
+import { objectFilter } from '../../../../js/functions/filterFunction';
 // Components
 import ParcelListItem from '../molecules/ParcelListItem';
 import { Button } from 'semantic-ui-react';
@@ -12,9 +12,10 @@ import Search from '../molecules/Search';
 import Loading from '../molecules/Loading';
 import ErrorScreen from '../molecules/ErrorScreen';
 //State
-import { parcelListState } from '../../state/parcelListState-atom';
+import { parcelListState } from '../../../../state/parcelListState-atom';
 
 function ParcelList() {
+  // eslint-disable-next-line no-unused-vars
   const [parcelListData, setParcelListData] = useRecoilState(parcelListState);
   const [displayedParcels, setDisplayedParcels] = useState([]);
   const [fetchStatus, setFetchStatus] = useState('loading');
@@ -90,16 +91,18 @@ function ParcelList() {
       </div>
       <div className="sort-buttons">
         <Button className="s-button" onClick={() => sortHandler('parcel_id')}>
-          Sort By ID <i className={`fas fa-chevron-${sortDirection['parcel_id']}`} />
+          Sortera efter ID{' '}
+          <i className={`fas fa-chevron-${sortDirection['parcel_id']}`} />
         </Button>
         <Button
           className="s-button sc-button"
           onClick={() => sortHandler('location_name')}>
-          Sort By Location{' '}
+          Sortera efter Plats{' '}
           <i className={`fas fa-chevron-${sortDirection['location_name']}`} />
         </Button>
         <Button className="s-button" onClick={() => sortHandler('status')}>
-          Sort By Status <i className={`fas fa-chevron-${sortDirection['status']}`} />
+          Sortera efter Status{' '}
+          <i className={`fas fa-chevron-${sortDirection['status']}`} />
         </Button>
       </div>
       {fetchStatus === 'loading' && <Loading />}

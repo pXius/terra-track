@@ -7,9 +7,9 @@ import { Button } from 'semantic-ui-react';
 import GoogleMaps from '../molecules/GoogleMaps';
 import ErrorScreen from '../molecules/ErrorScreen';
 // Functions
-import { beautifyJSONStatus } from '../../js/functions/beautifyJSON';
+import { beautifyJSONStatus } from '../../../../js/functions/beautifyJSON';
 // State
-import { parcelListState } from '../../state/parcelListState-atom';
+import { parcelListState } from '../../../../state/parcelListState-atom';
 
 function Parcel() {
   const { id } = useParams(); // url:id
@@ -23,7 +23,7 @@ function Parcel() {
           <Button circular className="back-button" icon="arrow left" />
         </Link>
         <div className="parcel-page-card effect7 effect8">
-          <h2>Parcel: {parcel.parcel_id}</h2>
+          <h2>Paket: {parcel.parcel_id}</h2>
           <div className="parcel-status">
             <span>
               <span className="pl-head">Status:</span> {beautifyJSONStatus(parcel.status)}
@@ -34,14 +34,14 @@ function Parcel() {
             </span>
 
             <span className="parcel-sender">
-              <span className="pl-head">Sender:</span> {parcel.sender}
+              <span className="pl-head">Avsändare:</span> {parcel.sender}
             </span>
             <span>
-              <span className="pl-head">Location:</span> {parcel.location_name}
+              <span className="pl-head">Plats:</span> {parcel.location_name}
             </span>
           </div>
           <div className="notes">
-            <div className="pl-head">Notes:</div>
+            <div className="pl-head">Anteckning:</div>
             {parcel.notes === null ? 'None' : parcel.notes}
           </div>
 

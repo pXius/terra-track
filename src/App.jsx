@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 // React Libraries
 import React from 'react';
 import { useRecoilValue } from 'recoil';
@@ -8,15 +9,22 @@ import HomePage from './components/template/HomePage';
 import ParcelList from './components/template/ParcelList';
 import Parcel from './components/template/ParcelPage';
 import Footer from './components/organisms/Footer';
+import ErrorScreen from './components/molecules/ErrorScreen';
+// Swedish Components
+import HomePage_SE from './other-languages/swedish/components/template/HomePage_SE';
+import ParcelList_SE from './other-languages/swedish/components/template/ParcelList_SE';
+import Parcel_SE from './other-languages/swedish/components/template/ParcelPage_SE';
+
 // State
 import { themeState } from './state/theme-atom';
+import { langState } from './state/lang-atom';
 //Style
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './styles/js_theming/themes';
 import { GlobalStyles } from './styles/js_theming/global';
-import ErrorScreen from './components/molecules/ErrorScreen';
 
 function App() {
+  const lang = useRecoilValue(langState);
   const theme = useRecoilValue(themeState);
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
@@ -26,13 +34,13 @@ function App() {
           <Header />
           <Switch>
             <Route path="/" exact>
-              <HomePage />
+              {lang === 'en' ? <HomePage /> : <HomePage_SE />}
             </Route>
             <Route path="/parcels">
-              <ParcelList />
+              {lang === 'en' ? <ParcelList /> : <ParcelList_SE />}
             </Route>
             <Route path="/parcel/:id" exact>
-              <Parcel />
+              {lang === 'en' ? <Parcel /> : <Parcel_SE />}
             </Route>
             <Route component={ErrorScreen} />
           </Switch>

@@ -6,7 +6,6 @@ import { useRecoilState } from 'recoil';
 import { Checkbox } from 'semantic-ui-react';
 // State
 import { themeState } from '../../state/theme-atom';
-import LangSelect from '../atoms/LangSelect';
 
 function Header() {
   const [theme, setTheme] = useRecoilState(themeState);
@@ -26,15 +25,12 @@ function Header() {
           Track
         </h1>
       </Link>
-      <div className="lang-wrapper">
-        <div className="theme-toggle">
-          <i className={`moon ${theme === 'light' ? 'outline' : null} icon large `} />
-          <Checkbox
-            onClick={(event, data) => themeToggle(event, data)}
-            className="toggle"
-          />
-        </div>
-        <LangSelect />
+      <div className="theme-toggle">
+        <i className={`moon ${theme === 'light' ? 'outline' : null} icon large `} />
+        <Checkbox
+          onClick={(event, data) => themeToggle(event, data)}
+          className="toggle"
+        />
       </div>
     </header>
   );

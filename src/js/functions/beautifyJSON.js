@@ -13,4 +13,19 @@ function beautifyJSONStatus(status) {
   }
 }
 
-module.exports = { beautifyJSONStatus };
+function beautifyJSONStatusSE(status) {
+  switch (status) {
+    case 'order-info-received':
+      return 'Orderinformation Mottagen';
+    case 'ready-for-pickup':
+      return 'Redo för Insamling';
+    case 'on-the-way':
+      return 'På Väg';
+    case 'delivered':
+      return 'Levereras';
+    default:
+      return status;
+  }
+}
+
+module.exports = { beautifyJSONStatus, beautifyJSONStatusSE };
