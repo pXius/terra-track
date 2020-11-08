@@ -56,7 +56,6 @@ function Parcel() {
       </div>
     );
   } catch (e) {
-    history.push('/parcels');
     return <ErrorScreen />;
   }
 }

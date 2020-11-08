@@ -49,6 +49,10 @@
   margin-bottom: 16px;
 }
 
+.maps {
+  color: rgba(222, 27, 27, 0.7);
+}
+
 @media screen and (min-width: 480px) {
   .parcel-body {
     padding: 0 8vw 0 8vw;
