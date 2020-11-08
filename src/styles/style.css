@@ -2,3 +2,5 @@
 @import './templates/_homePage.css';
 @import './organisms/_header.css';
 @import './templates/_ParcelListPage.css';
+@import './molecules/_parcelListItem.css';
+@import './molecules/_searchBox.css';

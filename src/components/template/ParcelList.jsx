@@ -21,7 +21,6 @@ function ParcelList() {
   const [fetchStatus, setFetchStatus] = useState('loading');
   const [sortDirection, setSortDirection] = useState({ parcel_id: 'down' });
   const endpoint = process.env.REACT_APP_SDA8_API;
-  // const endpoint = 'http://google.com';
 
   // API call to populate parcel arrays.
   useEffect(() => {
@@ -82,23 +81,27 @@ function ParcelList() {
 
   return (
     <div className="body parcel-list-body">
-      <Search
-        parcelArray={parcelListData}
-        setParcelArray={setDisplayedParcels}
-        sortFunction={setSortDirection}
-      />
-      <div>
-        <Button onClick={() => sortHandler('parcel_id')}>
+      <div className="filter-and-search">
+        <Search
+          parcelArray={parcelListData}
+          setParcelArray={setDisplayedParcels}
+          sortFunction={setSortDirection}
+        />
+        <FilterButton callback={dropDownChange} />
+      </div>
+      <div className="sort-buttons">
+        <Button className="s-button" onClick={() => sortHandler('parcel_id')}>
           Sort By ID <i className={`fas fa-chevron-${sortDirection['parcel_id']}`} />
         </Button>
-        <Button onClick={() => sortHandler('location_name')}>
+        <Button
+          className="s-button sc-button"
+          onClick={() => sortHandler('location_name')}>
           Sort By Location{' '}
           <i className={`fas fa-chevron-${sortDirection['location_name']}`} />
         </Button>
-        <Button onClick={() => sortHandler('status')}>
+        <Button className="s-button" onClick={() => sortHandler('status')}>
           Sort By Status <i className={`fas fa-chevron-${sortDirection['status']}`} />
         </Button>
-        <FilterButton callback={dropDownChange} />
       </div>
       {fetchStatus === 'loading' && <Loading />}
       {fetchStatus === 'success' && jsxParcels}

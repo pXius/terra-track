@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // React Libraries
 import React, { useEffect, useState } from 'react';
+import { Input } from 'semantic-ui-react';
 import { objectMultiFilter } from '../../js/functions/filterFunction';
 import { objectSort } from '../../js/functions/sorterFunctions';
 
@@ -33,15 +34,16 @@ function Search({ parcelArray, setParcelArray, sortFunction }) {
   };
 
   return (
-    <div className="find">
-      <input
+    <>
+      <Input
         onChange={inputHandler}
+        icon="search"
         type="text"
         autoComplete="off"
         className="live-search-field"
-        placeholder="Find a parcel..."
+        placeholder="Parcel ID or Sender?"
       />
-    </div>
+    </>
   );
 }
 

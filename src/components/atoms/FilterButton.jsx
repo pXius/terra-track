@@ -8,8 +8,8 @@ function FilterButton({ callback }) {
     callback(sortType);
   }
   return (
-    <Dropdown text="Status Filter" icon="filter" floating labeled button className="icon">
-      <Dropdown.Menu>
+    <Dropdown text="Filter" icon="filter" floating labeled button className="icon">
+      <Dropdown.Menu direction={'left'}>
         <Dropdown.Header icon="dolly" content="Filter by Status" />
 
         <Dropdown.Item onClick={() => clickHandler('all')}>All</Dropdown.Item>

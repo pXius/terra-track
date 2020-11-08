@@ -1,23 +1,56 @@
 @import '../palette.css';
 
-.dropdown {
-  cursor: pointer;
-  display: inline-block;
-  min-height: 1em;
-  outline: 0;
-  border: none;
-  vertical-align: baseline;
-  background: #e0e1e2 none;
-  color: rgba(0, 0, 0, 0.6);
-  margin: 0 0.25em 0 0;
-  padding: 0.47em 0.5em 0.78571429em 1em;
-  font-weight: 700;
-  line-height: 1em;
-  font-style: normal;
-  box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34, 36, 38, 0.15) inset;
+.parcel-list-body {
+  padding: 0 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12pt;
+}
+
+.filter-and-search {
+  display: flex;
+  margin-bottom: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.live-search-field {
+  flex-grow: 1;
+  height: 38px;
+  padding: 0;
+  margin-right: 8px;
   border-radius: 0.28571429rem;
   -webkit-border-radius: 0.28571429rem;
   -moz-border-radius: 0.28571429rem;
   -ms-border-radius: 0.28571429rem;
   -o-border-radius: 0.28571429rem;
+}
+
+.ui.labeled.icon.button {
+  max-width: 25%;
+  flex-grow: 1;
+  max-height: 36px;
+}
+
+.ui.labeled.icon.button,
+.ui.labeled.icon.buttons .button {
+  position: relative;
+  padding-left: 48px !important;
+}
+
+.sort-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 8px;
+}
+
+.ui.button.s-button {
+  padding-left: 8px;
+  padding-right: 8px;
+  flex-grow: 1;
+}
+
+.ui.button.sc-button {
+  margin-right: 0.52em;
+  margin-left: 0.26em;
 }

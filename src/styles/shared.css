@@ -6,12 +6,15 @@
 /* Site Wide CSS */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Roboto', sans-serif;
 }
 
 .App {
   display: grid;
-  grid-template-rows: 20vh 75vh 5vh;
+  height: 100vh;
+  overflow: auto;
+  grid-template-rows: 100px auto 60px;
   grid-template-areas: 'header' 'body' 'footer';
 }
 
@@ -25,4 +28,26 @@ body {
 
 .footer {
   grid-area: footer;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 770px) {
+  .App {
+    grid-template-columns: 10vw auto 10vw;
+    grid-template-areas:
+      'l-side header r-side'
+      'l-side body r-side'
+      'l-side footer r-side';
+  }
 }
