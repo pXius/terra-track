@@ -41,7 +41,7 @@ function Search({ parcelArray, setParcelArray, sortFunction }) {
         type="text"
         autoComplete="off"
         className="live-search-field"
-        placeholder="Paket-ID eller Avsändare?"
+        placeholder="Sök efter ID eller Avsändare?"
       />
     </>
   );

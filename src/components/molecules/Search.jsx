@@ -41,7 +41,7 @@ function Search({ parcelArray, setParcelArray, sortFunction }) {
         type="text"
         autoComplete="off"
         className="live-search-field"
-        placeholder="Parcel ID or Sender?"
+        placeholder="Search by ID or Sender?"
       />
     </>
   );
