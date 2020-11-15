@@ -1,6 +1,6 @@
 // React Libraries
 import React from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 // Components
 import { Button } from 'semantic-ui-react';
